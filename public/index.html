@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bienvenue | AirbnbHelp</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <script>
+      // Redirection directe vers la page appartement (code demo par défaut)
+      (function(){
+        var url = new URL('property.html', window.location.href);
+        if (!url.searchParams.get('code')) url.searchParams.set('code', 'demo');
+        window.location.replace(url.toString());
+      })();
+    </script>
+
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#">
+          <span class="badge"></span>
+          GuestPage
+        </a>
+        <div class="searchbar">
+          <div class="seg" id="seg-where">Où</div>
+          <div class="seg" id="seg-when">Quand</div>
+          <div class="seg" id="seg-who">Qui</div>
+          <button class="cta" title="Rechercher" aria-label="Rechercher">🔎</button>
+        </div>
+        <div class="actions">
+          <button class="lang-btn" id="lang-btn-index" aria-haspopup="true" aria-expanded="false" title="Langue"><img id="lang-flag-index" src="assets/img/flag-fr.svg" alt="FR"></button>
+          <div class="menu" id="lang-menu-index" hidden>
+            <button data-lang="fr">Francais</button>
+            <button data-lang="en">English</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <header class="header">
+        <h1>Votre guide d’arrivée</h1>
+        <p class="muted">Trouvez le Wi‑Fi, le check‑in/out, les consignes et les meilleures adresses autour de votre logement.</p>
+      </header>
+
+      <section class="card">
+        <form id="code-form" class="code-form" autocomplete="off">
+          <label for="code">Accéder à votre logement</label>
+          <div class="row">
+            <input id="code" name="code" placeholder="Entrez le code (ex: demo)" required />
+            <button type="submit" class="primary">Ouvrir</button>
+          </div>
+          <p class="hint">Astuce: code <strong>demo</strong> pour un aperçu.</p>
+        </form>
+      </section>
+
+      <section class="gallery">
+        <div class="item hero"><img alt="Salon" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop" loading="lazy" /></div>
+        <div class="item"><img alt="Entrée" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=800&auto=format&fit=crop" loading="lazy" /></div>
+        <div class="item"><img alt="Chambre" src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop" loading="lazy" /></div>
+      </section>
+
+      <section class="grid-2">
+        <div class="card">
+          <h2>Pourquoi ce guide ?</h2>
+          <p>Un espace simple et moderne, inspiré d’Airbnb, pour centraliser toutes les informations utiles à votre arrivée.</p>
+          <ul class="bullets">
+            <li>Connexion Wi‑Fi en 1 scan</li>
+            <li>Check‑in / Check‑out clairs</li>
+            <li>Conseils personnalisés et urgences</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Comment ça marche ?</h2>
+          <ol class="bullets">
+            <li>Scannez le QR dans le logement, ou saisissez le code.</li>
+            <li>Consultez les infos essentielles et les recommandations locales.</li>
+            <li>Partagez le lien à vos co‑voyageurs.</li>
+          </ol>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>AirbnbHelp • Guide invité</small>
+      </footer>
+    </main>
+
+    <script>
+      const form = document.getElementById('code-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const code = (document.getElementById('code').value || '').trim();
+        if (!code) return;
+        const url = new URL('property.html', window.location.href);
+        url.searchParams.set('code', code);
+        window.location.href = url.toString();
+      });
+    </script>\n    <script src="assets/app.js"></script>\n  </body>
+  </html>

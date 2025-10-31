@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe5ea"/>
+      <stop offset="100%" stop-color="#ffd1db"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="800" fill="url(#g)"/>
+  <rect x="40" y="40" width="1120" height="720" rx="24" ry="24" fill="#fff" stroke="#f0c2cd"/>
+  <g fill="#ff385c">
+    <circle cx="200" cy="250" r="8"/>
+    <circle cx="230" cy="250" r="8"/>
+    <circle cx="260" cy="250" r="8"/>
+  </g>
+  <g stroke="#ff385c" stroke-width="10" fill="none">
+    <rect x="140" y="290" width="380" height="260" rx="18"/>
+    <line x1="140" y1="370" x2="520" y2="370"/>
+    <line x1="140" y1="450" x2="520" y2="450"/>
+  </g>
+  <text x="600" y="420" text-anchor="middle" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="56" fill="#ff385c">Photo logement</text>
+</svg>
+

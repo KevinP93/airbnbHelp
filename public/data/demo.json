@@ -1,0 +1,72 @@
+{
+  "code": "demo",
+  "name": "Appartement Lumiere — Vieux Port",
+  "name_en": "Lumiere Apartment — Old Port",
+  "address": "12 Rue des Docks, 13002 Marseille",
+  "address_en": "12 Rue des Docks, 13002 Marseille",
+  "updated_at": "2025-01-01T10:00:00Z",
+  "photos_named": {
+    "bedroom": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop",
+    "entrance": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200&auto=format&fit=crop",
+    "living": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+  },
+  "photos": [
+    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1505692794403-34d4982f88aa?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop"
+  ],
+  "checkin": "a partir de 15:00 (boite a cles)",
+  "checkout": "avant 11:00",
+  "arrival_notes": "La boite a cles est au portail bleu. Code: 1357.",
+  "checkin_en": "from 3:00 PM (key box)",
+  "checkout_en": "before 11:00 AM",
+  "arrival_notes_en": "Key box is on the blue gate. Code: 1357.",
+  "wifi": {
+    "ssid": "Lumiere-Guest",
+    "password": "Marseille2025!",
+    "type": "WPA",
+    "hidden": false
+  },
+  "house_map": [
+    { "name": "Seche-cheveux", "name_en": "Hair dryer", "location": "Salle de bain — tiroir du bas", "location_en": "Bathroom — bottom drawer" },
+    { "name": "Fer a repasser", "name_en": "Iron", "location": "Placard entree — etagere du haut", "location_en": "Entrance closet — top shelf" },
+    { "name": "Aspirateur", "name_en": "Vacuum cleaner", "location": "Placard couloir", "location_en": "Hallway closet" },
+    { "name": "Eponges & liquide vaisselle", "name_en": "Sponges & dish soap", "location": "Cuisine — sous l'evier", "location_en": "Kitchen — under the sink" },
+    { "name": "Cafe & the", "name_en": "Coffee & tea", "location": "Cuisine — etagere au-dessus de la bouilloire", "location_en": "Kitchen — shelf above the kettle" }
+  ],
+  "rules": [
+    "Non-fumeur a l'interieur",
+    "Pas de soirees",
+    "Respect du voisinage apres 22h",
+    "Tri selectif: bac jaune (emballages), bac vert (verre)"
+  ],
+  "rules_en": [
+    "No smoking indoors",
+    "No parties",
+    "Quiet hours after 10pm",
+    "Recycling: yellow bin (packaging), green bin (glass)"
+  ],
+  "transports": [
+    { "name": "Tram Sadi Carnot", "name_en": "Sadi Carnot Tram", "type": "Tram", "type_en": "Tram", "distance": 250, "address": "Boulevard des Dames", "address_en": "Boulevard des Dames" },
+    { "name": "Vieux-Port — Hotel de Ville", "name_en": "Old Port — City Hall", "type": "Metro", "type_en": "Metro", "distance": 700, "address": "Quai du Port", "address_en": "Quai du Port" },
+    { "name": "Taxi Vieux-Port", "name_en": "Old Port Taxi", "type": "Taxi", "type_en": "Taxi", "distance": 400, "address": "Quai du Port 32", "address_en": "32 Quai du Port" }
+  ],
+  "emergency": [
+    { "label": "Urgences — 112", "label_en": "Emergency — 112", "phone": "+112" },
+    { "label": "Pompiers — 18", "label_en": "Firefighters — 18", "phone": "+3318" },
+    { "label": "Hote (Kevin)", "label_en": "Host (Kevin)", "phone": "+33600000000" }
+  ],
+  "recommendations": {
+    "food": [
+      { "name": "Chez Fonfon", "name_en": "Chez Fonfon", "rating": 4.6, "category": "Poisson & bouillabaisse", "category_en": "Seafood & bouillabaisse", "distance": 1800, "address": "140 Rue du Vallon des Auffes", "address_en": "140 Rue du Vallon des Auffes" },
+      { "name": "La Caravelle", "name_en": "La Caravelle", "rating": 4.4, "category": "Tapas & vue", "category_en": "Tapas & view", "distance": 900, "address": "34 Quai du Port", "address_en": "34 Quai du Port" },
+      { "name": "Maison Geney", "name_en": "Maison Geney", "rating": 4.7, "category": "Boulangerie & cafe", "category_en": "Bakery & coffee", "distance": 600, "address": "38 Rue Caisserie", "address_en": "38 Rue Caisserie" }
+    ],
+    "activities": [
+      { "name": "MUCEM", "name_en": "MUCEM", "rating": 4.6, "category": "Musee", "category_en": "Museum", "distance": 1200, "address": "1 Esplanade J4", "address_en": "1 Esplanade J4" },
+      { "name": "Panier", "name_en": "Le Panier", "rating": 4.7, "category": "Quartier historique", "category_en": "Historic district", "distance": 500, "address": "Le Panier", "address_en": "Le Panier" },
+      { "name": "Vallon des Auffes", "name_en": "Vallon des Auffes", "rating": 4.8, "category": "Balade", "category_en": "Walk", "distance": 3000, "address": "Vallon des Auffes", "address_en": "Vallon des Auffes" }
+    ]
+  }
+}
