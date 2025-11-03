@@ -1,9 +1,18 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/property",
+      "has": [
+        { "type": "query", "key": "code", "value": "(?<code>[^/]+)" }
+      ],
+      "destination": "/property/:code",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/property", "destination": "/property.html" },
     { "source": "/property/:code", "destination": "/property.html?code=:code" }
   ]
 }
-
