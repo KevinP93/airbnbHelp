@@ -1,7 +1,7 @@
 {
   "code": "demo",
-  "name": "Appartement Lumiere — Vieux Port",
-  "name_en": "Lumiere Apartment — Old Port",
+  "name": "Appartement Lumiere - Vieux Port",
+  "name_en": "Lumiere Apartment - Old Port",
   "address": "12 Rue des Docks, 13002 Marseille",
   "address_en": "12 Rue des Docks, 13002 Marseille",
   "updated_at": "2025-01-01T10:00:00Z",
@@ -29,11 +29,11 @@
     "hidden": false
   },
   "house_map": [
-    { "name": "Seche-cheveux", "name_en": "Hair dryer", "location": "Salle de bain — tiroir du bas", "location_en": "Bathroom — bottom drawer" },
-    { "name": "Fer a repasser", "name_en": "Iron", "location": "Placard entree — etagere du haut", "location_en": "Entrance closet — top shelf" },
+    { "name": "Seche-cheveux", "name_en": "Hair dryer", "location": "Salle de bain - tiroir du bas", "location_en": "Bathroom - bottom drawer" },
+    { "name": "Fer a repasser", "name_en": "Iron", "location": "Placard entree - etagere du haut", "location_en": "Entrance closet - top shelf" },
     { "name": "Aspirateur", "name_en": "Vacuum cleaner", "location": "Placard couloir", "location_en": "Hallway closet" },
-    { "name": "Eponges & liquide vaisselle", "name_en": "Sponges & dish soap", "location": "Cuisine — sous l'evier", "location_en": "Kitchen — under the sink" },
-    { "name": "Cafe & the", "name_en": "Coffee & tea", "location": "Cuisine — etagere au-dessus de la bouilloire", "location_en": "Kitchen — shelf above the kettle" }
+    { "name": "Eponges & liquide vaisselle", "name_en": "Sponges & dish soap", "location": "Cuisine - sous l'evier", "location_en": "Kitchen - under the sink" },
+    { "name": "Cafe & the", "name_en": "Coffee & tea", "location": "Cuisine - etagere au-dessus de la bouilloire", "location_en": "Kitchen - shelf above the kettle" }
   ],
   "rules": [
     "Non-fumeur a l'interieur",
@@ -49,12 +49,12 @@
   ],
   "transports": [
     { "name": "Tram Sadi Carnot", "name_en": "Sadi Carnot Tram", "type": "Tram", "type_en": "Tram", "distance": 250, "address": "Boulevard des Dames", "address_en": "Boulevard des Dames" },
-    { "name": "Vieux-Port — Hotel de Ville", "name_en": "Old Port — City Hall", "type": "Metro", "type_en": "Metro", "distance": 700, "address": "Quai du Port", "address_en": "Quai du Port" },
+    { "name": "Vieux-Port - Hotel de Ville", "name_en": "Old Port - City Hall", "type": "Metro", "type_en": "Metro", "distance": 700, "address": "Quai du Port", "address_en": "Quai du Port" },
     { "name": "Taxi Vieux-Port", "name_en": "Old Port Taxi", "type": "Taxi", "type_en": "Taxi", "distance": 400, "address": "Quai du Port 32", "address_en": "32 Quai du Port" }
   ],
   "emergency": [
-    { "label": "Urgences — 112", "label_en": "Emergency — 112", "phone": "+112" },
-    { "label": "Pompiers — 18", "label_en": "Firefighters — 18", "phone": "+3318" },
+    { "label": "Urgences - 112", "label_en": "Emergency - 112", "phone": "+112" },
+    { "label": "Pompiers - 18", "label_en": "Firefighters - 18", "phone": "+3318" },
     { "label": "Hote (Kevin)", "label_en": "Host (Kevin)", "phone": "+33600000000" }
   ],
   "recommendations": {
