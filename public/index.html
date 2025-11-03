@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guide Invité | AirbnbHelp</title>
+    <title>Guide InvitÃ© | AirbnbHelp</title>
     <link rel="stylesheet" href="assets/styles.css" />
     <meta name="color-scheme" content="light dark" />
   </head>
@@ -15,7 +15,7 @@
           <div class="seg" id="prop-city">Logement</div>
           <div class="seg" id="seg-infos">Infos</div>
           <div class="seg" id="seg-around">Autour</div>
-          <button class="cta" title="Rechercher" aria-label="Rechercher">🔎</button>
+          <button class="cta" title="Rechercher" aria-label="Rechercher">&#x1F50D;</button>
         </div>
         <div class="actions">
           <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
@@ -36,13 +36,13 @@
     <aside id="drawer" class="drawer" aria-hidden="true">
       <div class="drawer-header">
         <span class="brand"><span class="badge"></span>Menu</span>
-        <button id="drawer-close" class="hamburger" aria-label="Fermer">✕</button>
+        <button id="drawer-close" class="hamburger" aria-label="Fermer">âœ•</button>
       </div>
       <nav class="drawer-nav">
-        <a href="#wifi" class="nav-link">Wi‑Fi</a>
-        <a href="#arrival" class="nav-link">Arrivée & Départ</a>
+        <a href="#wifi" class="nav-link">Wiâ€‘Fi</a>
+        <a href="#arrival" class="nav-link">ArrivÃ©e & DÃ©part</a>
         <a href="#house" class="nav-link">Maison</a>
-        <a href="#rules" class="nav-link">Règles</a>
+        <a href="#rules" class="nav-link">RÃ¨gles</a>
         <a href="#transport" class="nav-link">Transports</a>
         <a href="#emergency" class="nav-link">Urgences</a>
         <a href="#reco" class="nav-link">Recommandations</a>
@@ -51,7 +51,7 @@
 
     <main class="container">
       <header class="header">
-        <h1 id="prop-name">Guide invité</h1>
+        <h1 id="prop-name">Guide invitÃ©</h1>
         <p id="prop-address" class="muted"></p>
       </header>
 
@@ -59,38 +59,38 @@
 
       <section class="grid-2" id="wifi">
         <div class="card">
-          <h2 id="wifi-title">Wi‑Fi</h2>
+          <h2 id="wifi-title">Wiâ€‘Fi</h2>
           <div class="wifi">
             <div class="wifi-info">
-              <p><strong id="label-ssid">Nom (SSID):</strong> <span id="wifi-ssid">—</span></p>
-              <p><strong id="label-password">Mot de passe:</strong> <span id="wifi-pass">—</span></p>
+              <p><strong id="label-ssid">Nom (SSID):</strong> <span id="wifi-ssid">â€”</span></p>
+              <p><strong id="label-password">Mot de passe:</strong> <span id="wifi-pass">â€”</span></p>
               <div class="row">
                 <button id="btn-copy-wifi">Copier le mot de passe</button>
                 <button id="btn-show-qr" class="primary">Afficher QR</button>
               </div>
             </div>
             <div class="wifi-qr" id="wifi-qr" hidden>
-              <img id="wifi-qr-img" alt="QR Wi‑Fi" />
-              <small id="label-scan-wifi" class="muted">Scannez pour vous connecter au Wi‑Fi.</small>
+              <img id="wifi-qr-img" alt="QR Wiâ€‘Fi" />
+              <small id="label-scan-wifi" class="muted">Scannez pour vous connecter au Wiâ€‘Fi.</small>
             </div>
           </div>
         </div>
 
         <div class="card" id="arrival">
-          <h2 id="arrival-title">Arrivée & Départ</h2>
-          <p><strong id="label-checkin">Check‑in:</strong> <span id="checkin">—</span></p>
-          <p><strong id="label-checkout">Check‑out:</strong> <span id="checkout">—</span></p>
+          <h2 id="arrival-title">ArrivÃ©e & DÃ©part</h2>
+          <p><strong id="label-checkin">Checkâ€‘in:</strong> <span id="checkin">â€”</span></p>
+          <p><strong id="label-checkout">Checkâ€‘out:</strong> <span id="checkout">â€”</span></p>
           <p id="arrival-notes" class="muted"></p>
         </div>
       </section>
 
       <section class="card" id="house">
-        <h2 id="house-title">Maison • Où trouver quoi ?</h2>
+        <h2 id="house-title">Maison â€¢ OÃ¹ trouver quoi ?</h2>
         <div id="house-map" class="list"></div>
       </section>
 
       <section class="card" id="rules">
-        <h2 id="rules-title">Règles et consignes</h2>
+        <h2 id="rules-title">RÃ¨gles et consignes</h2>
         <ul id="rules-list" class="bullets"></ul>
       </section>
 
@@ -100,7 +100,7 @@
           <ul id="transports" class="cards mini"></ul>
         </div>
         <div class="card" id="emergency">
-          <h2 id="emergency-title">Contacts d’urgence</h2>
+          <h2 id="emergency-title">Contacts dâ€™urgence</h2>
           <ul id="emergency-list" class="list"></ul>
         </div>
       </section>
@@ -109,7 +109,7 @@
         <h2 id="reco-title">Recommandations locales</h2>
         <div class="tabs">
           <button id="tab-food" data-tab="food" class="active">Restaurants</button>
-          <button id="tab-activities" data-tab="activities">Activités</button>
+          <button id="tab-activities" data-tab="activities">ActivitÃ©s</button>
         </div>
         <div id="reco-food" class="reco"></div>
         <div id="reco-activities" class="reco" hidden></div>

@@ -1,8 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/property.html", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/property", "destination": "/property.html" },
-    { "source": "/property/:code", "destination": "/property.html?code=:code" }
+    { "source": "/property", "destination": "/index.html" }
   ]
 }
