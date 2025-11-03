@@ -3,34 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bienvenue | AirbnbHelp</title>
+    <title>Guide Invité | AirbnbHelp</title>
     <link rel="stylesheet" href="assets/styles.css" />
+    <meta name="color-scheme" content="light dark" />
   </head>
   <body>
-    <script>
-      // Redirection directe vers la page appartement (code demo par défaut)
-      (function(){
-        var url = new URL('property.html', window.location.href);
-        if (!url.searchParams.get('code')) url.searchParams.set('code', 'demo');
-        window.location.replace(url.toString());
-      })();
-    </script>
-
     <div class="topbar">
       <div class="topbar-inner">
-        <a class="brand" href="#">
-          <span class="badge"></span>
-          GuestPage
-        </a>
+        <a class="brand" href="#"><span class="badge"></span>GuestPage</a>
         <div class="searchbar">
-          <div class="seg" id="seg-where">Où</div>
-          <div class="seg" id="seg-when">Quand</div>
-          <div class="seg" id="seg-who">Qui</div>
+          <div class="seg" id="prop-city">Logement</div>
+          <div class="seg" id="seg-infos">Infos</div>
+          <div class="seg" id="seg-around">Autour</div>
           <button class="cta" title="Rechercher" aria-label="Rechercher">🔎</button>
         </div>
         <div class="actions">
-          <button class="lang-btn" id="lang-btn-index" aria-haspopup="true" aria-expanded="false" title="Langue"><img id="lang-flag-index" src="assets/img/flag-fr.svg" alt="FR"></button>
-          <div class="menu" id="lang-menu-index" hidden>
+          <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </button>
+          <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" title="Language"><img id="lang-flag" src="assets/img/flag-fr.svg" alt="FR"></button>
+          <div class="menu" id="lang-menu" hidden>
             <button data-lang="fr">Francais</button>
             <button data-lang="en">English</button>
           </div>
@@ -38,63 +32,94 @@
       </div>
     </div>
 
+    <div id="overlay" class="overlay" hidden></div>
+    <aside id="drawer" class="drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <span class="brand"><span class="badge"></span>Menu</span>
+        <button id="drawer-close" class="hamburger" aria-label="Fermer">✕</button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="#wifi" class="nav-link">Wi‑Fi</a>
+        <a href="#arrival" class="nav-link">Arrivée & Départ</a>
+        <a href="#house" class="nav-link">Maison</a>
+        <a href="#rules" class="nav-link">Règles</a>
+        <a href="#transport" class="nav-link">Transports</a>
+        <a href="#emergency" class="nav-link">Urgences</a>
+        <a href="#reco" class="nav-link">Recommandations</a>
+      </nav>
+    </aside>
+
     <main class="container">
       <header class="header">
-        <h1>Votre guide d’arrivée</h1>
-        <p class="muted">Trouvez le Wi‑Fi, le check‑in/out, les consignes et les meilleures adresses autour de votre logement.</p>
+        <h1 id="prop-name">Guide invité</h1>
+        <p id="prop-address" class="muted"></p>
       </header>
 
-      <section class="card">
-        <form id="code-form" class="code-form" autocomplete="off">
-          <label for="code">Accéder à votre logement</label>
-          <div class="row">
-            <input id="code" name="code" placeholder="Entrez le code (ex: demo)" required />
-            <button type="submit" class="primary">Ouvrir</button>
+      <section id="gallery" class="gallery"></section>
+
+      <section class="grid-2" id="wifi">
+        <div class="card">
+          <h2 id="wifi-title">Wi‑Fi</h2>
+          <div class="wifi">
+            <div class="wifi-info">
+              <p><strong id="label-ssid">Nom (SSID):</strong> <span id="wifi-ssid">—</span></p>
+              <p><strong id="label-password">Mot de passe:</strong> <span id="wifi-pass">—</span></p>
+              <div class="row">
+                <button id="btn-copy-wifi">Copier le mot de passe</button>
+                <button id="btn-show-qr" class="primary">Afficher QR</button>
+              </div>
+            </div>
+            <div class="wifi-qr" id="wifi-qr" hidden>
+              <img id="wifi-qr-img" alt="QR Wi‑Fi" />
+              <small id="label-scan-wifi" class="muted">Scannez pour vous connecter au Wi‑Fi.</small>
+            </div>
           </div>
-          <p class="hint">Astuce: code <strong>demo</strong> pour un aperçu.</p>
-        </form>
+        </div>
+
+        <div class="card" id="arrival">
+          <h2 id="arrival-title">Arrivée & Départ</h2>
+          <p><strong id="label-checkin">Check‑in:</strong> <span id="checkin">—</span></p>
+          <p><strong id="label-checkout">Check‑out:</strong> <span id="checkout">—</span></p>
+          <p id="arrival-notes" class="muted"></p>
+        </div>
       </section>
 
-      <section class="gallery">
-        <div class="item hero"><img alt="Salon" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop" loading="lazy" /></div>
-        <div class="item"><img alt="Entrée" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=800&auto=format&fit=crop" loading="lazy" /></div>
-        <div class="item"><img alt="Chambre" src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop" loading="lazy" /></div>
+      <section class="card" id="house">
+        <h2 id="house-title">Maison • Où trouver quoi ?</h2>
+        <div id="house-map" class="list"></div>
+      </section>
+
+      <section class="card" id="rules">
+        <h2 id="rules-title">Règles et consignes</h2>
+        <ul id="rules-list" class="bullets"></ul>
       </section>
 
       <section class="grid-2">
-        <div class="card">
-          <h2>Pourquoi ce guide ?</h2>
-          <p>Un espace simple et moderne, inspiré d’Airbnb, pour centraliser toutes les informations utiles à votre arrivée.</p>
-          <ul class="bullets">
-            <li>Connexion Wi‑Fi en 1 scan</li>
-            <li>Check‑in / Check‑out clairs</li>
-            <li>Conseils personnalisés et urgences</li>
-          </ul>
+        <div class="card" id="transport">
+          <h2 id="transport-title">Transports</h2>
+          <ul id="transports" class="cards mini"></ul>
         </div>
-        <div class="card">
-          <h2>Comment ça marche ?</h2>
-          <ol class="bullets">
-            <li>Scannez le QR dans le logement, ou saisissez le code.</li>
-            <li>Consultez les infos essentielles et les recommandations locales.</li>
-            <li>Partagez le lien à vos co‑voyageurs.</li>
-          </ol>
+        <div class="card" id="emergency">
+          <h2 id="emergency-title">Contacts d’urgence</h2>
+          <ul id="emergency-list" class="list"></ul>
         </div>
       </section>
 
+      <section class="card" id="reco">
+        <h2 id="reco-title">Recommandations locales</h2>
+        <div class="tabs">
+          <button id="tab-food" data-tab="food" class="active">Restaurants</button>
+          <button id="tab-activities" data-tab="activities">Activités</button>
+        </div>
+        <div id="reco-food" class="reco"></div>
+        <div id="reco-activities" class="reco" hidden></div>
+      </section>
+
       <footer class="footer">
-        <small>AirbnbHelp • Guide invité</small>
+        <small id="updatedAt" class="muted"></small>
       </footer>
     </main>
 
-    <script>
-      const form = document.getElementById('code-form');
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const code = (document.getElementById('code').value || '').trim();
-        if (!code) return;
-        const url = new URL('property.html', window.location.href);
-        url.searchParams.set('code', code);
-        window.location.href = url.toString();
-      });
-    </script>\n    <script src="assets/app.js"></script>\n  </body>
+    <script src="assets/app.js"></script>
+  </body>
   </html>
