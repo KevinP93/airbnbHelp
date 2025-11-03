@@ -77,8 +77,8 @@ function renderProperty(p){
   // Tabs
   qsa('.tabs button').forEach(btn=>btn.addEventListener('click',()=>{ qsa('.tabs button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const tab=btn.getAttribute('data-tab'); const f=qs('#reco-food'), a=qs('#reco-activities'); if(f) f.hidden = tab!=='food'; if(a) a.hidden = tab!=='activities'; }));
 
-  // Updated at
-  const ts = p.updated_at ? new Date(p.updated_at) : new Date(); setText('#updatedAt', `${L.updated} ${ts.toLocaleDateString()} ${ts.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}`, '');
+  // Footer credit
+  setText('#updatedAt', 'created by KwebDesign', '');
 
   // Gallery (3 images: Bedroom, Entrance, Living)
   const gallery=qs('#gallery'); if(gallery){ const named=p.photos_named||{}; const fb={ bedroom:'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop', entrance:'https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200&auto=format&fit=crop', living:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop' }; const photos=[ named.bedroom || (Array.isArray(p.photos)&&p.photos[0]) || fb.bedroom, named.entrance || (Array.isArray(p.photos)&&p.photos[1]) || fb.entrance, named.living || (Array.isArray(p.photos)&&p.photos[2]) || fb.living ]; gallery.innerHTML=''; const altsEN=['Bedroom','Entrance','Living room']; const altsFR=['Chambre','Entree','Salon']; photos.forEach((src,i)=>{ const wrap=document.createElement('div'); wrap.className='item'+(i===0?' hero':''); const img=document.createElement('img'); img.alt = isEN ? altsEN[i] : altsFR[i]; img.loading='lazy'; img.src=src; img.onerror=()=>{ img.onerror=null; img.src='assets/img/photo-logement.svg'; }; wrap.appendChild(img); gallery.appendChild(wrap); }); }
