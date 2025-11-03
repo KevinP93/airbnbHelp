@@ -56,8 +56,8 @@ function renderProperty(p){
   if(btnCopy) btnCopy.addEventListener('click', async()=>{ if(!p.wifi||!p.wifi.password) return; try{ await navigator.clipboard.writeText(p.wifi.password); btnCopy.textContent=L.copied; setTimeout(()=>btnCopy.textContent=L.copy,1500);}catch{} });
   if(btnQR) btnQR.addEventListener('click', ()=>{ if(!p.wifi||!p.wifi.ssid) return; const src = wifiQrUrl({ ssid:p.wifi.ssid, password:p.wifi.password, type:p.wifi.type||'WPA', hidden:!!p.wifi.hidden }); if(qrImg) qrImg.src=src; if(qrWrap){ qrWrap.hidden=!qrWrap.hidden; } btnQR.textContent = (qrWrap && qrWrap.hidden) ? L.showqr : L.hideqr; });
 
-  // House map
-  const house=qs('#house-map'); if(house){ house.innerHTML=''; (p.house_map||[]).forEach(it=>{ const div=document.createElement('div'); div.className='row'; const name=(isEN&&it.name_en)||it.name; const loc=(isEN&&it.location_en)||it.location||''; div.innerHTML = `<strong>${name}</strong><span class="muted">${loc}</span>`; house.appendChild(div); }); }
+  // House list
+  const house=qs('#house-list'); if(house){ house.innerHTML=''; (p.house_map||[]).forEach(it=>{ const li=document.createElement('li'); const name=(isEN&&it.name_en)||it.name; const loc=(isEN&&it.location_en)||it.location||''; li.innerHTML = `<strong>${name}</strong> — ${loc}`; house.appendChild(li); }); }
 
   // Rules
   const ulRules=qs('#rules-list')||qs('#rules'); if(ulRules){ ulRules.innerHTML=''; const rules=(isEN&&Array.isArray(p.rules_en)?p.rules_en:(p.rules||[])); rules.forEach(r=>{ const li=document.createElement('li'); li.textContent=r; ulRules.appendChild(li); }); }
@@ -113,4 +113,18 @@ function initLangMenus(){
   applyLangToUI();
 }
 
-(async function main(){ try{ initLangMenus(); const prop=await loadProperty(); renderProperty(prop); initDrawer(); } catch(e){ console.error(e); alert('Impossible de charger le logement. Verifiez le code.'); window.location.href='index.html'; } })();
+(async function main(){
+  try{
+    initLangMenus();
+    const prop=await loadProperty();
+    renderProperty(prop);
+    // Override house title with proper accents and clearer wording
+    setText('#house-title', getLang()==='en' ? 'Home — Where to find what?' : 'Maison — Où trouver quoi ?');
+    initDrawer();
+    setText('#house-title', getLang()==='en' ? 'Home \u2014 Where to find what?' : 'Maison \u2014 O\u00F9 trouver quoi ?');
+  } catch(e){
+    console.error(e);
+    alert('Impossible de charger le logement. Veuillez reessayer.');
+    window.location.href='index.html';
+  }
+})();
